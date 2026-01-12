@@ -1,56 +1,99 @@
-# Allay Java Plugin Template
+# 🔍 WAILA - What Am I Looking At
 
-Welcome to the java plugin template for allay.
+> 🎮 An AllayMC server plugin that lets you easily view block information!
 
-## Prerequisites
+[![AllayMC](https://img.shields.io/badge/AllayMC-0.2.1-blue)](https://github.com/AllayMC/Allay)
+[![Java](https://img.shields.io/badge/Java-21-orange)](https://www.oracle.com/java/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-- Java21 or higher.
-- Allay installed.
+## ✨ Features
 
-## Getting Started
+### 📦 Basic Block Information
+- 🏷️ Block identifier display
+- ⏱️ Break time (dynamically calculated based on held tool)
+- ✅ Harvestability check
+- 📍 Block coordinates and distance
 
-1. **Clone this Repository**
+### 🎯 Special Block Support
+| Block Type         | Displayed Info    |
+|--------------------|-------------------|
+| 🍰 Cake            | Remaining slices  |
+| 🌾 Crops           | Growth stage      |
+| 🔴 Redstone Wire   | Signal strength   |
+| 🚪 Doors/Trapdoors | Open/Closed state |
+| 🗑️ Composter      | Compost level     |
+
+### 🏭 Block Entity Support
+| Block Entity                    | Displayed Info            |
+|---------------------------------|---------------------------|
+| 🔥 Furnace/Blast Furnace/Smoker | Stored XP, fuel, progress |
+| ⚗️ Brewing Stand                | Brew time, fuel           |
+| 💎 Beacon                       | Effect types              |
+| 📦 Containers                   | Item count/capacity       |
+| 🎵 Jukebox                      | Currently playing record  |
+| ⚡ Comparator                    | Output signal strength    |
+| 🎹 Note Block                   | Note pitch                |
+
+## 📥 Installation
+
+1. Download the latest plugin JAR file
+2. Place the JAR file in the `plugins` folder of your AllayMC server
+3. Restart the server
+4. Start using it! 🎉
+
+## 🎮 Usage
+
+No commands needed! Simply:
+
+1. 👀 Look at any block
+2. 📱 Information will automatically display in the ActionBar
+3. 🔄 Auto-refreshes every 100ms
+
+## 🌍 Language Support
+
+| Language          | Code    | Status |
+|-------------------|---------|--------|
+| 🇺🇸 English (US) | `en_US` | ✅      |
+| 🇬🇧 English (UK) | `en_GB` | ✅      |
+| 🇨🇳 简体中文         | `zh_CN` | ✅      |
+| 🇹🇼 繁體中文         | `zh_TW` | ✅      |
+
+Language automatically switches based on the player's client settings!
+
+## 🛠️ Development
+
+### Build the Project
 
 ```bash
-git clone https://github.com/AllayMC/JavaPluginTemplate.git
-```
-   
-2. **Navigate to the Cloned Directory**
-
-```bash
-cd JavaPluginTemplate
-```
-   
-3. **Change Plugin Information**
-
-- Rename package name from `org.allaymc.javaplugintemplate` to `your.group.name.and.pluginname`
-- Update [build.gradle.kts](build.gradle.kts) and [settings.gradle.kts](settings.gradle.kts)
-- Reload gradle
-   
-4. **Build and Run Your Plugin**
-
-```bash
-gradlew shadowJar
-```
-   
-This command will produce a `.jar` file in the `build/libs` directory. 
-Copy the `.jar` file to the `plugins` directory of your allay server.
-Start the allay server and check the logs to ensure your plugin loads and operates
-as expected.
-
-5. **Test Your Plugin in Gradle**
-
-```bash
-gradlew runServer
+./gradlew build
 ```
 
-This command will start an allay server with your plugin loaded.
-Then close allay server by clicking `X` in the dashboard window.
+### Project Structure
 
-## Documentation
+```
+src/main/java/me/daoge/waila/
+├── 📄 WAILA.java           # Main plugin class
+├── 📄 TrKeys.java          # Translation key constants
+├── 📁 info/
+│   └── 📄 BlockInfoBuilder.java  # Block info builder
+└── 📁 util/
+    ├── 📄 RayCastUtil.java      # Raycast utility
+    └── 📄 RayCastResult.java    # Raycast result
+```
 
-For a deeper dive into the Allay API and its functionalities, please refer to our [documentation](https://docs.allaymc.org) (WIP).
+### Dependencies
 
-## License
+- ☕ Java 21+
+- 🎮 AllayMC API 0.2.1+
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📜 Credits
+
+This project is ported from [LSE_Waila](https://github.com/ZMBlocks/LSE_Waila). Thanks to the original author **小小的子沐呀** for the open-source contribution! 🙏
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+<p align="center">
+  Made with ❤️ for AllayMC
+</p>

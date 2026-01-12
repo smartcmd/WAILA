@@ -1,0 +1,38 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "高亮显示UI包v1.0.0",
+    "description": "特别感谢原作者：Scodev",
+    "min_engine_version": [1, 20, 50],
+    "uuid": "b23829c7-8d89-4b67-bf64-323d140a8063",
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "2bed2dcf-aa8e-4f85-8180-af6eac86ceb8",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "9dfdeadc-c2f3-4aee-9f93-cd4b5168d7ff",
+      "version": [1, 0, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "transparent",
+      "memory_tier": 1,
+      "name": "transparent"
+    },
+    {
+      "folder_name": "black",
+      "memory_tier": 1,
+      "name": "black"
+    }
+  ],
+  "metadata": {
+    "authors": ["Scodev"]
+  }
+}
