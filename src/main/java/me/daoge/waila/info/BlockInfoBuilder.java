@@ -35,8 +35,8 @@ public final class BlockInfoBuilder {
         var blockEntity = result.getBlockEntity();
         var langCode = player.getLoginData().getLangCode();
 
-        // Basic block info: name and type
-        sb.append(buildBasicInfo(blockState, langCode));
+        var blockName = I18n.get().tr(langCode, blockState.getBlockStateData().translationKey());
+        sb.append(I18n.get().tr(langCode, TrKeys.BLOCK_NAME, blockName));
 
         // Hardness and harvest info (only if block is breakable)
         var blockStateData = blockState.getBlockStateData();
@@ -70,16 +70,6 @@ public final class BlockInfoBuilder {
         sb.append("\n").append(buildFooterInfo(result, langCode));
 
         return sb.toString();
-    }
-
-    /**
-     * Builds basic block information (name and type ID).
-     */
-    private static String buildBasicInfo(BlockState blockState, LangCode langCode) {
-        var blockType = blockState.getBlockType();
-        // Display block identifier directly (no translation API available yet)
-        String blockId = blockType.getIdentifier().toString();
-        return I18n.get().tr(langCode, TrKeys.BLOCK_NAME, blockId);
     }
 
     /**

@@ -5,7 +5,7 @@ plugins {
 
 group = "me.daoge.waila"
 description = "WAILA (what am I looking at?) for Allay"
-version = "0.1.0"
+version = "0.1.1-SNAPSHOT"
 
 java {
     toolchain {
@@ -14,7 +14,7 @@ java {
 }
 
 allay {
-    api = "0.21.0"
+    api = "0.26.0-SNAPSHOT"
 
     plugin {
         entrance = ".WAILA"
